@@ -1,0 +1,172 @@
+/* --- 1. ESTILOS BASE Y CUERPO --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    line-height: 1.4;
+}
+
+.container {
+    max-width: 1200px;  /* Controla qué tan ancho se expande el contenido */
+    margin: 0 auto;     /* Centra todo el bloque en la pantalla */
+    padding: 0 40px;    /* El ligero espaciado a izquierda y derecha que pediste */
+}
+
+h1 { font-size: 2.2rem; margin-bottom: 10px; }
+h2 { font-size: 1.6rem; margin: 20px 0; }
+h3 { font-size: 1.3rem; margin-bottom: 15px; }
+
+.descripcion {
+    font-size: 1rem;
+    max-width: 95%;
+    margin: 0 auto 30px auto;
+    color: #444;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 25px 0;
+}
+
+/* --- 2. GRID DE BOTONES (ESTILO EXPANDIDO 100%) --- */
+.grid-botones {
+    display: grid;
+    /* Creamos 4 columnas del mismo tamaño (1fr) */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espacio entre botones */
+    width: 100%;
+    margin-top: 30px;
+}
+
+.btn {
+    width: 100%;      /* El botón llena su celda del grid */
+    padding: 18px 0;  /* Altura interna */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Forzamos que los botones 5, 6 y 7 bajen y se alineen */
+.btn:nth-child(n+5) {
+    /* Mantenemos el tamaño, pero les decimos que empiecen en columnas específicas 
+       para que queden centrados o alineados a la izquierda según prefieras */
+    grid-column: span 1; 
+}
+
+/* OPCIONAL: Si quieres que los 3 de abajo estén centrados respecto a los 4 de arriba */
+.grid-botones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra la segunda fila si sobran espacios */
+}
+
+.btn {
+    /* Calculamos el ancho para que siempre quepan 4 (menos los gaps) */
+    flex: 0 0 calc(25% - 20px); 
+    min-width: 200px;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Colores de botones */
+.btn-azul    { background-color: #1a73e8; }
+.btn-gris    { background-color: #70757a; }
+.btn-verde   { background-color: #1e8e3e; }
+.btn-rojo    { background-color: #d93025; }
+.btn-naranja { background-color: #fbbc04; color: #000; }
+.btn-cian    { background-color: #12d8ff; color: #000; }
+.btn-negro   { background-color: #202124; }
+
+/* --- 3. ELEMENTOS DEL INFERIOR (JIRA Y ALUMNO) --- */
+.link-caja {
+    display: inline-block;
+    padding: 12px 40px;
+    border: 1px solid #4285f4;
+    color: #4285f4;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.ejemplo { font-weight: 900 ; font-size: 1.7rem; margin: 15px 0; color: #333; }
+.alumno { font-weight: 600 ; font-size: 1.8rem; margin-bottom: 20px; }
+
+/* --- 4. ESTILOS DEL MODAL (VENTANA EMERGENTE) --- */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscurecido */
+    backdrop-filter: blur(3px);
+}
+
+.modal-header span {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.separador-modal {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 28px;
+    color: #999;
+    line-height: 1;
+}
+
+.close-btn:hover { color: #000; }
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    width: 85%;
+    max-width: 650px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* El encabezado con la línea divisoria */
+.modal-header {
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0; /* La línea separadora clara */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.img-modal {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}

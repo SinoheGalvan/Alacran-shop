@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologías de Desarrollo de SW</title>
+    <link rel="stylesheet" href="diseño_p2.css">
+</head>
+<body class="container">
+    <script src="ventana_emergente.js"></script>
+    <header>
+        <br><br><br><br>
+        <h1>METODOLOGÍAS DE DESARROLLO DE SW</h1>
+        <h3>¿Qué es una metodología de desarrollo de software?</h3>
+        <p class="descripcion">
+            Las metodologías de desarrollo de software son un conjunto de técnicas y métodos organizativos que se aplican para diseñar soluciones de software informático. El objetivo de las distintas metodologías es el de intentar organizar los equipos de trabajo para que estos desarrollen las funciones de un programa de la mejor manera posible.
+        </p>
+    </header>
+
+    <main>
+        <hr>
+        <h1>TIPOS DE METODOLOGÍAS</h1>
+        <section class="botones-container">
+            <div class="grid-botones">
+                <button class="btn btn-azul" onclick="abrirModal('Cascada', 'cascada.PNG')">CASCADA</button>
+                <button class="btn btn-gris" onclick="abrirModal('Modelo V', 'modelov.PNG')">MODELO V</button>
+                <button class="btn btn-verde" onclick="abrirModal('Ágiles', 'agiles.PNG')">ÁGILES</button>
+                <button class="btn btn-rojo" onclick="abrirModal('Scrum', 'scrum.PNG')">SCRUM</button>
+                <button class="btn btn-naranja" onclick="abrirModal('Kanban', 'kanban.PNG')">KANBAN</button>
+                <button class="btn btn-cian" onclick="abrirModal('XP', 'xp.PNG')">XP</button>
+                <button class="btn btn-negro" onclick="abrirModal('Híbridas', 'hibridas.PNG')">HÍBRIDAS</button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="trabajo">
+            <h3>LINK A TABLERO DE TRABAJO</h3>
+            <a href="https://utd-emprendimiento-lagos.atlassian.net/jira/software/projects/ASP/boards/34" class="link-caja">---- JIRA ----</a>
+        </section>
+
+        <hr>
+
+        <section class="footer-info">
+            <a href="index.html" class="link-caja">---- REGRESAR MENÚ PRINCIPAL ----</a>
+            
+            <p class="ejemplo">"El que tiene fé en si mismo no necesita que los demás crean en el"</p>
+            <p class="alumno">Alumno: Jose Sinohe Galvan Rios</p>
+        </section>
+        <hr>
+    </main>
+    <div id="modalGeneral" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span id="modal-titulo">Título de Metodología</span>
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+        </div>
+        <hr class="separador-modal">
+        <div class="modal-body">
+            <img src="" alt="Metodología" id="modal-imagen" class="img-modal">
+        </div>
+    </div>
+    </div>
+</body>
+</html>
